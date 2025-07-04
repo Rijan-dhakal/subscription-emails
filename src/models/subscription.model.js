@@ -22,6 +22,11 @@ const subscriptionSchema = new mongoose.Schema({
         trim: true,
         required: true
     },
+    renewalPolicy:{
+        type: String,
+        reqired: true,
+        enum:['weekly', 'monthly', 'quaterly' ,'yearly']
+    },
     purchasedOn:{
         type: Date,
         default: Date.now

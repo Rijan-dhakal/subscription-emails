@@ -11,11 +11,11 @@ const subscriptionSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    catagory:{
+    category:{
         type: String,
         required: true,
         trim: true,
-        enum:['Entertainment', 'Education', 'Food', 'Health', 'Fitness', 'Other']
+        // enum:['Entertainment', 'Education', 'Food', 'Health', 'Fitness', 'Other']
     },
     cost:{
         type: Number,

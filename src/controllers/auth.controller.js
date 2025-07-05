@@ -2,6 +2,7 @@ import User from "../models/user.model.js"
 import { customError } from "../utils/customError.js"
 import bcrypt from "bcryptjs"
 import { generateJWT } from "../utils/generateJWT.js"
+import sendEmail from "../utils/sendEmails.js"
 
 export const signup = async (req, res, next) => {
     try {
@@ -74,6 +75,8 @@ export const login = async (req, res, next) => {
         // generating JWT and setting cookie
         const token = generateJWT(user)
         res.cookie("token", token, {httpOnly: true})
+
+        // sendEmail(user.email, user)   // only using for checking
 
         res.status(200).json({
             success: true,

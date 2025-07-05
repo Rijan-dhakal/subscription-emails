@@ -15,7 +15,7 @@ const subscriptionSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-        // enum:['Entertainment', 'Education', 'Food', 'Health', 'Fitness', 'Other']
+        
     },
     cost:{
         type: Number,

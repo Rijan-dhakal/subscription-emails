@@ -26,7 +26,7 @@ export const signup = async (req, res, next) => {
         const newUser = await User.create({
             username,
             email,
-            password: hashedPassword
+            password: hashedPassword,
         })
         
         const token = generateJWT(newUser)
@@ -76,7 +76,7 @@ export const login = async (req, res, next) => {
         const token = generateJWT(user)
         res.cookie("token", token, {httpOnly: true})
 
-        // sendEmail(user.email, user)   // only using for checking
+        sendEmail(user.email, user)   // only using for checking
 
         res.status(200).json({
             success: true,

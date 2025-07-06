@@ -6,6 +6,7 @@ import { connectDB } from "./database/connectDB.js";
 import errorHandler from "./middlewares/error.middleware.js";
 import authRouter from "./routes/auth.route.js";
 import subsRouter from "./routes/subs.route.js"
+import cronRouter from "./routes/cron.route.js";
 
 dotenv.config({ path: "./.env" });
 
@@ -26,6 +27,8 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRouter);
 
 app.use("/api/subs", subsRouter);
+
+app.use("/api/cron", cronRouter)
 
 connectDB();
 

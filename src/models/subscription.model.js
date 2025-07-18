@@ -35,6 +35,10 @@ const subscriptionSchema = new mongoose.Schema({
         type: Date,
         required: true
     },
+    lastSent:{
+        type: Date,
+        required: true
+    }
 }, {timestamps: true})
 
 const Subscription = mongoose.model("Subscription", subscriptionSchema)

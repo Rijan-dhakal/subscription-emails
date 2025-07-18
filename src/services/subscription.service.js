@@ -13,12 +13,11 @@ const forWeekly = async () => {
   const users = await User.find({
     subscriptionPolicy: "weekly",
     subscriptionEndDate: {
-      $gte: startOfDay,
+      $gte: startOfDay,     
       $lte: endOfDay,
     },
   });
+  
+  
 
-  users.forEach( user=>{
-        sendEmail(user.email, user)
-  })
 };
